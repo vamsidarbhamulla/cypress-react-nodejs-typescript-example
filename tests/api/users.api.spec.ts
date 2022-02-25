@@ -1,8 +1,7 @@
 import { expect } from 'chai';
-import { User } from '../libs/shared/models';
-import { newUserData } from '../libs/shared/core';
+import { User } from "@tests/shared/models";
 import { getAllUsersApiRequest, postUsersApiRequest } from './user.api';
-// import { newUserData } from "@tests/shared/core";
+import { newUserData } from "@tests/shared/core";
 
 describe('Verify post new user api', async () => {
   it('should post a new user from api', async function () {
@@ -18,7 +17,7 @@ describe('Verify Adding a new user should increase the current user count', asyn
   it('should fetch all the available users from api', async function () {
     const allUsersListBefore: Array<User> = await getAllUsersApiRequest();
     const newUser: User = newUserData();
-    const createUser: User = await postUsersApiRequest(newUser);
+    await postUsersApiRequest(newUser);
     const allUsersListAfter: Array<User> = await getAllUsersApiRequest();
     expect(allUsersListAfter.length).to.be.eq(allUsersListBefore.length + 1);
   });
