@@ -63,7 +63,7 @@
         "eslint-plugin-mocha": "9.0.0",
         "eslint-plugin-mocha-no-only": "1.1.1",
         "eslint-plugin-prettier": "4.0.0",
-        "husky": "^7.0.4",
+        "husky": "7.0.4",
         "@faker-js/faker": "5.5.3",
         "@types/faker": "5.5.9",
         "axios": "0.26.0",

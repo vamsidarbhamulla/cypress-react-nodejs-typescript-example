@@ -10,8 +10,8 @@ RUN cd server && npm install && npm run build
 
 FROM node:10
 WORKDIR /usr/src/app/
-COPY --from=ui-build /usr/src/app/my-app/build ./my-app/build
-COPY --from=server-build /usr/src/app/api/dist ./
+COPY --from=ui-build /usr/src/app/client/build ./client/build
+COPY --from=server-build /usr/src/app/server/dist ./
 RUN ls
 
 EXPOSE 3080
